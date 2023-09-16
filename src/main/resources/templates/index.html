@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+        <a class="navbar-brand" href="#">Portafolio - Faber Aguirre</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/index">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/proyectos">Proyectos Personales</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contacto">Contacto</a>
+                </li>
+            </ul>
+
+            <img th:src="@{/Images/Perfil.jpeg}" class="img-fluid rounded-circle ml-auto" alt="Imagen perfil" width="50">
+        </div>
+    </nav>
+</header>
+
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+
+                <div class="card-body">
+                    <h5 class="card-title">Información personal</h5>
+                    <p class="card-text">Desarrollador de Software</p>
+                    <p class="card-text">
+                        Soy un apasionado desarrollador de software con un enfoque en la creación de soluciones tecnológicas innovadoras.
+                        Con más de 10 años de experiencia en la industria, he trabajado en una variedad de proyectos desafiantes que abarcan desde aplicaciones web hasta aplicaciones móviles y sistemas empresariales.
+
+                        Mi objetivo es combinar mi pasión por la programación con mi capacidad para resolver problemas para desarrollar software de alta calidad que mejore la vida de las personas y las empresas. Estoy constantemente aprendiendo nuevas tecnologías y enfoques para mantenerme al día con las tendencias de la industria y mantener mi conjunto de habilidades actualizado.
+
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+
+            <h1>Descripción de Estudios</h1>
+            <p>
+                Soy un apasionado por la tecnología y he dedicado tiempo a mi educación para fortalecer mis habilidades. Obtuve mi título de grado en Informática en la Universidad Autónoma de Manizales, donde adquirí una base sólida en programación, algoritmos y desarrollo de software.
+
+                Además, continué mi educación mediante cursos y certificaciones en tecnologías relevantes como Java, JavaScript y desarrollo web. Mi búsqueda constante de conocimiento me ha permitido mantenerme al día con las últimas tendencias en la industria de la tecnología.
+
+                Creo firmemente en la importancia de la educación continua y siempre estoy dispuesto a aprender nuevas habilidades y enfoques para mejorar mi capacidad como desarrollador de software.
+            </p>
+
+            <h2>Habilidades</h2>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Habilidad</th>
+                    <th>Nivel</th>
+                    <th>Experiencia</th>
+                    <th>Descripción</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr th:each="habilidad : ${habilidades}">
+                    <td th:text="${habilidad.nombre}"></td>
+                    <td th:text="${habilidad.nivel}"></td>
+                    <td th:text="${habilidad.experiencia}"></td>
+                    <td th:text="${habilidad.descripcion}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
